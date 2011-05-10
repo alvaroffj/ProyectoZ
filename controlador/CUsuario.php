@@ -18,7 +18,7 @@ class CUsuario {
         $this->estados[1] = (object) $this->estados[1];
         $this->setDo();
         $this->setOp();
-        //lalal
+        //lalal lolo
     }
 
     function getLayout() {
