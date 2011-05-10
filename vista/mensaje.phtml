@@ -1,0 +1,40 @@
+<?
+
+?>
+<form action="?sec=mensaje&do=add" method="POST">
+    <textarea name="txt"></textarea>
+    <input type="submit" value="Enviar">
+</form>
+
+<div id="stream">
+    <?php foreach($cp->getCSec()->mensajes as $m) {?>
+    <div class="mensaje">
+        <h2><?php echo $m->NOM_USUARIO." ".$m->APE_USUARIO ?></h2>
+        <span class="fecha"><?php echo $m->FECHA_MENSAJE ?></span>
+        <p>
+            <?php echo $m->TXT_MENSAJE ?>
+        </p>
+        <div class="replys">
+            <?php $rep = $cp->getCSec()->getReply($m->ID_MENSAJE); ?>
+            <?php if($rep != null) { ?>
+                <div class="reply">
+                <?php foreach($rep as $r) {?>
+                    <h2><?php echo $r->NOM_USUARIO." ".$r->APE_USUARIO ?></h2>
+                    <span class="fecha"><?php echo $r->FECHA_RESPUESTA ?></span>
+                    <p>
+                        <?php echo $r->TXT_RESPUESTA ?>
+                    </p>
+                <?php } ?>
+                </div>
+            <?php } ?>
+            <form action="?sec=mensaje&do=reply" method="POST">
+                <input type="hidden" name="idMen" value="<?php echo $m->ID_MENSAJE ?>"/>
+                <input type="hidden" name="idMenCom" value="<?php echo $m->ID_COMUNIDAD ?>"/>
+                <input type="hidden" name="idMenUser" value="<?php echo $m->ID_USUARIO ?>"/>
+                <textarea name="txt" id="reply"></textarea>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    <?php } ?>
+</div>

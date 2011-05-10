@@ -1,0 +1,52 @@
+<?
+$error = array("", "El usuario NO existe", "La contrase&ntilde;a NO pudo ser enviada");
+$tipoError = array("", "error", "error");
+if(isset($_GET["e"])) {
+    $msg = $error[$_GET["e"]];
+    $tipoMsg = $tipoError[$_GET["e"]];
+} else {
+    $msg = "Ingrese su usuario para recuperar la contrase&ntilde;a";
+    $tipoMsg = "information";
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>Proyecto Z</title>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script src="js/jquery.validate.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="contenedor" class="png_bg">
+            <div id="header">
+                <div id="swf"></div>
+            </div>
+            <div id="main">
+                <div class="ingreso">
+                    <div id="ingresar">
+                        <img src="img/recuperar-tit.gif" />
+                        <div class="notification <?= $tipoMsg ?> png_bg">
+                            <div><?= $msg ?></div>
+                        </div>
+                        <form action="?sec=log&do=rec" method="POST" id="formu">
+                            <table width="400" border="0" cellspacing="0" cellpadding="5">
+                                <tr>
+                                    <td width="122">Usuario</td>
+                                    <td width="258"><input class="text-input small-input required" type="text" name="user"></input</td>
+                                </tr>
+                            </table>
+                            <div align="center">
+                                <input class="button" type="image" value="Entrar" src="img/recuperar.gif"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="clear"></div>
+            <div id="footer">
+                
+            </div>
+        </div>
+    </body>
+</html>

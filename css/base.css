@@ -1,0 +1,81 @@
+.clear{
+    clear:both;
+}
+
+
+body {
+    font-family:arial, sans-serif;
+    font-size:12px;
+    text-align: left;
+}
+
+#page-wrap {
+/*    background: white;*/
+    min-width: 780px;
+/*    max-width: 1260px;*/
+/*    margin: 10px auto;*/
+    text-align: center;
+}
+#page-wrap #inside {
+    margin: 0 auto;
+    padding-top: 0px;
+/*    padding-bottom: 10px;*/
+}
+
+#left-side {
+    width: 250px;
+    padding: 0 5px 0 10px;
+    height: 300px;
+    background: #ededed;
+    display: inline-block;
+}
+
+#right-side {
+    width: 250px;
+    padding: 0 5px 0 10px;
+    height: 300px;
+    background: #ededed;
+    display: inline-block;
+}
+
+#main-content {
+/*    padding-left: 280px;*/
+/*    padding-right: 280px;*/
+    padding-top: 0px;
+/*    margin-top: 40px;*/
+    height: 300px;
+    width: 500px;
+    display: inline-block;
+    text-align: left;
+}
+
+div.mensaje {
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+    padding: 5px;
+}
+
+div.mensaje p {
+
+}
+
+div.mensaje h2 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.mensaje span.fecha {
+    font-size: 11px;
+    color: #999;
+}
+
+div.mensaje .replys {
+    margin-left: 20px;
+}
+
+div.mensaje .replys .reply h2 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+}
