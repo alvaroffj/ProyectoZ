@@ -14,6 +14,7 @@ class CPrincipal {
 
     function __construct() {
         $this->ss = new session();
+        //prueba
 //        print_r($_SESSION);
         if ($this->checkLogin()) {
             $this->setSec();
